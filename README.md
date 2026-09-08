@@ -536,6 +536,10 @@ The Spark Master machine can submit the job using:
 docker exec -it spark-master \
   /opt/spark/bin/spark-submit \
   --master spark://10.68.71.113:7077 \
+  --conf spark.driver.host=10.68.71.113 \
+  --conf spark.driver.bindAddress=0.0.0.0 \
+  --conf spark.driver.port=4041 \
+  --conf spark.blockManager.port=4042 \
   /opt/spark/jobs/test.py
 ```
 
@@ -685,7 +689,11 @@ Submit:
 docker exec -it spark-master \
   /opt/spark/bin/spark-submit \
   --master spark://10.68.71.113:7077 \
-  /opt/spark/jobs/hdfs_test.py
+  --conf spark.driver.host=10.68.71.113 \
+  --conf spark.driver.bindAddress=0.0.0.0 \
+  --conf spark.driver.port=4041 \
+  --conf spark.blockManager.port=4042 \
+  /opt/spark/jobs/test.py
 ```
 
 ---
@@ -790,6 +798,10 @@ The recommended command is:
 docker exec -it spark-master \
   /opt/spark/bin/spark-submit \
   --master spark://10.68.71.113:7077 \
+  --conf spark.driver.host=10.68.71.113 \
+  --conf spark.driver.bindAddress=0.0.0.0 \
+  --conf spark.driver.port=4041 \
+  --conf spark.blockManager.port=4042 \
   /opt/spark/jobs/test.py
 ```
 
@@ -799,7 +811,11 @@ For HDFS:
 docker exec -it spark-master \
   /opt/spark/bin/spark-submit \
   --master spark://10.68.71.113:7077 \
-  /opt/spark/jobs/hdfs_test.py
+  --conf spark.driver.host=10.68.71.113 \
+  --conf spark.driver.bindAddress=0.0.0.0 \
+  --conf spark.driver.port=4041 \
+  --conf spark.blockManager.port=4042 \
+  /opt/spark/jobs/test.py
 ```
 
 ---
@@ -1165,6 +1181,10 @@ nc -zv 10.68.71.113 8020
 docker exec -it spark-master \
   /opt/spark/bin/spark-submit \
   --master spark://10.68.71.113:7077 \
+  --conf spark.driver.host=10.68.71.113 \
+  --conf spark.driver.bindAddress=0.0.0.0 \
+  --conf spark.driver.port=4041 \
+  --conf spark.blockManager.port=4042 \
   /opt/spark/jobs/test.py
 ```
 
