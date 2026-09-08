@@ -1,19 +1,17 @@
 services:
-
   spark-worker:
     image: apache/spark:3.5.3
 
     container_name: spark-worker
 
-    hostname: spark-worker
+    network_mode: host
 
     command: >
       /opt/spark/bin/spark-class
       org.apache.spark.deploy.worker.Worker
       spark://10.68.71.113:7077
+      --host 10.68.71.114
+      --port 7078
       --webui-port 8081
-
-    ports:
-      - "8081:8081"
 
     restart: unless-stopped
